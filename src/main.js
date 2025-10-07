@@ -2,7 +2,7 @@ import { Application, HTMLText, Container, Graphics } from "pixi.js";
 
 (async () => {
   const app = new Application();
-  await app.init({ resizeTo: window, backgroundColor: 0xFFFFFF });
+  await app.init({ resizeTo: window, backgroundAlpha: 0.0 });
   app.stage.hitArea = app.screen;
   document.getElementById("pixi-container").appendChild(app.canvas);
 
