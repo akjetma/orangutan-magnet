@@ -8,12 +8,12 @@ import { Application, HTMLText, Container, Graphics } from "pixi.js";
 
   const orangutan = new HTMLText({
     text: "🦧",
-    style: { fontSize: 100 }
+    style: { fontSize: 128 }
   });
   orangutan.anchor.set(0.5);
   orangutan.position.set(app.screen.width / 2, app.screen.height / 2);
   orangutan.velocity = { x: 0, y: 0 };
-  orangutan.scale.set(0.35);
+  orangutan.scale.set(0.5);
   app.stage.addChild(orangutan);
 
   const magnetIcon = new HTMLText({
@@ -22,7 +22,7 @@ import { Application, HTMLText, Container, Graphics } from "pixi.js";
   });
   const lightningIcon = new HTMLText({
     text: "⚡",
-    style: { fontSize: 100 },
+    style: { fontSize: 128 },
     position: { x: 0, y: magnetIcon.height },
     visible: false
   });
@@ -30,7 +30,7 @@ import { Application, HTMLText, Container, Graphics } from "pixi.js";
   const magnet = new Container();
   magnet.addChild(magnetIcon);
   magnet.addChild(lightningIcon);
-  magnet.scale.set(0.35);
+  magnet.scale.set(0.5);
   magnet.pivot.set(magnetIcon.width / 2, magnetIcon.height / 2);
   magnet.position.set(app.screen.width / 2, app.screen.height / 2 - 200);
   magnet.active = false;
