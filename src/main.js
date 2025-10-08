@@ -2,7 +2,7 @@ import { Application, HTMLText, Container, Graphics } from "pixi.js";
 
 (async () => {
   const app = new Application();
-  await app.init({ resizeTo: window, backgroundAlpha: 0.0 });
+  await app.init({ resizeTo: window, backgroundAlpha: 0.0, autoDensity: true, resolution: window.devicePixelRatio});
   app.stage.hitArea = app.screen;
   document.getElementById("pixi-container").appendChild(app.canvas);
 
@@ -13,7 +13,7 @@ import { Application, HTMLText, Container, Graphics } from "pixi.js";
   orangutan.anchor.set(0.5);
   orangutan.position.set(app.screen.width / 2, app.screen.height / 2);
   orangutan.velocity = { x: 0, y: 0 };
-  orangutan.scale.set(0.5);
+  orangutan.scale.set(0.35);
   app.stage.addChild(orangutan);
 
   const magnetIcon = new HTMLText({
@@ -30,7 +30,7 @@ import { Application, HTMLText, Container, Graphics } from "pixi.js";
   const magnet = new Container();
   magnet.addChild(magnetIcon);
   magnet.addChild(lightningIcon);
-  magnet.scale.set(0.5);
+  magnet.scale.set(0.35);
   magnet.pivot.set(magnetIcon.width / 2, magnetIcon.height / 2);
   magnet.position.set(app.screen.width / 2, app.screen.height / 2 - 200);
   magnet.active = false;
